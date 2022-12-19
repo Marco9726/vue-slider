@@ -5,6 +5,7 @@ const {
 createApp({
     data(){
         return{
+            autoplay : null,
             activeImage: 0,
             slides : [
                 {
@@ -37,10 +38,8 @@ createApp({
         }
     },
     created() {
-        //set interval di 3 secondi che richiama la funzione next per effettuare l'autoplay
-        setInterval(() => {
-            this.nextImage()
-        }, 3000);
+        // richiamo la funzione dell'autoplay nel creeted per farlo partire al caricamento della pagina 
+        this.startAutoplay()
     },
     methods: {
         //metodo per cliccare una thumb e renderla attiva
@@ -64,10 +63,18 @@ createApp({
             if(this.activeImage < 0){
                 this.activeImage = this.slides.length -1;
             }
+        },
+        //metodo per far partire l'autoplay
+        startAutoplay(){
+            this.autoplay = setInterval(() => {
+                this.nextImage()
+            }, 3000)
+        },
+        //metodo per stoppare l'autoplay
+        stopAutoplay(){
+            clearInterval(this.autoplay);
+            this.autoplay = null;
         }
         
     }
 }).mount('#app')
-
-
-console.log(slides);
