@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Khula', sans-serif;
+}
+
+body{
+    background-image: url('https://wallpaperaccess.com/full/2838473.jpg');
+    background-size: cover;
 }
 
 .container {
@@ -9,6 +15,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#logo-container{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.slider-wrapper{
+    box-shadow: rgba(0,0,0,0.75) 0px 15px 30px;
 }
 
 .item {
@@ -69,8 +88,17 @@
     z-index: 999;
 }
 
+.prev:hover,
+.next:hover{
+    background-color: rgb(255, 255, 255);
+}
+
 .next {
     bottom: 0;
+}
+
+.text{
+    text-shadow: rgba(0, 0, 0, 0.874) 0px 5px 15px;
 }
 
 /*
