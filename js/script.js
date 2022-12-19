@@ -40,6 +40,24 @@ createApp({
         //metodo per cliccare una thumb e renderla attiva
         chooseThumb(index){
             this.activeImage = index;
+        },
+        //metodo per passare all'immagine successiva
+        nextImage(){
+            //incremento il contatore di 1
+            this.activeImage++;
+            //se il valore del contatore diventa maggiore della lunghezza dell'array -1, visualizza l'ultima immagine
+            if(this.activeImage > this.slides.length - 1){
+                this.activeImage = 0;
+            }
+        },
+        //metodo per passare all'immagine precedente
+        prevImage(){
+            //decremento il contatore di 1
+            this.activeImage--;
+            //se il valore del contatore diventa mine della di 0, visualizza la prima immagine
+            if(this.activeImage < 0){
+                this.activeImage = this.slides.length -1;
+            }
         }
         
     }
