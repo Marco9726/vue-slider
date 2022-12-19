@@ -37,6 +37,10 @@ createApp({
         }
     },
     methods: {
+        //metodo per cliccare una thumb e renderla attiva
+        chooseThumb(index){
+            this.activeImage = index;
+        }
         
     }
 }).mount('#app')
