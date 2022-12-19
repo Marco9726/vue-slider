@@ -36,6 +36,12 @@ createApp({
 
         }
     },
+    created() {
+        //set interval di 3 secondi che richiama la funzione next per effettuare l'autoplay
+        setInterval(() => {
+            this.nextImage()
+        }, 3000);
+    },
     methods: {
         //metodo per cliccare una thumb e renderla attiva
         chooseThumb(index){
